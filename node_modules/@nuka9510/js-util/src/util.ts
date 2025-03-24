@@ -437,7 +437,7 @@ export default class Util {
    * `Object`의 `deepCopy`를 반환 한다.
    */
   static copy<T extends Object>(
-    /** `deepCopy`할 `object` */ arg: T
+    /** `deepCopy`할 `object` */ arg?: T | null
   ): T {
     if (Util.isObject(arg)) {
       const result = {} as any;

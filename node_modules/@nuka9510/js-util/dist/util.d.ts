@@ -274,7 +274,7 @@ export default class Util {
      * `Object`의 `deepCopy`를 반환 한다.
      */
     static copy<T extends Object>(
-    /** `deepCopy`할 `object` */ arg: T): T;
+    /** `deepCopy`할 `object` */ arg?: T | null): T;
     /**
      * `s_num` <= x <= `e_num` 범위의 배열을 반환한다.
      */
