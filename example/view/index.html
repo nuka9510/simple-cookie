@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div style="display: flex; flex-direction: column;">
+    <div data-name="result"></div>
+    <input type="text" data-name="name" placeholder="name">
+    <input type="text" data-name="value" placeholder="value">
+    <input type="datetime-local" data-name="expires" placeholder="expires">
+    <div style="display: flex;">
+      <button type="button" data-action="set-cookie-click">set-cookie</button>
+      <button type="button" data-action="pop-cookie-click">pop-cookie</button>
+    </div>
+  </div>
+</body>
+<script type="importmap">
+  {
+    "imports": {
+      "@nuka9510/js-util": "/node_modules/@nuka9510/js-util/dist/index.js",
+      "@nuka9510/simple-cookie": "/dist/index.js"
+    },
+    "scopes": {
+      "/dist/": { "/dist/cookie": "/dist/cookie.js" },
+      "/node_modules/@nuka9510/js-util/dist/": { "/node_modules/@nuka9510/js-util/dist/util": "/node_modules/@nuka9510/js-util/dist/util.js" }
+    }
+  }
+</script>
+<script type="module" src="../js/index.js"></script>
+</html>
