@@ -58,11 +58,11 @@ export default class Cookie {
     /**
      * 사이트 간 요청과 함께 쿠키가 전송될지를 제어하여 사이트 간 요청 위조 공격({@link https://developer.mozilla.org/ko/docs/Glossary/CSRF CSRF})에 대한 일부 보호를 제공합니다.
      *
-     ** `Strict`
+     ** `Strict`  \
      * 브라우저가 동일한 사이트 요청에만 쿠키를 전송한다는 것을 의미합니다. 즉, 쿠키를 설정한 동일한 사이트에서 발생하는 요청에만 쿠키를 전송합니다. 만약 다른 도메인 또는 같은 도메인의 스키마에서 발생하는 요청이라면 `SameSite=Strict` 속성이 있는 쿠키는 전송되지 않습니다.
-     ** `Lax`
+     ** `Lax`  \
      * 이미지 또는 프레임을 불러오는 요청과 같은 사이트 간 요청은 쿠키가 전송되지 않는 것을 의미합니다. 하지만 사용자가 링크를 따라갈 때처럼 외부 사이트에서 원래 사이트로 이동할 때는 쿠키를 전송합니다. 이것은 `SameSite` 속성이 명시되지 않았으면 기본 값으로 동작합니다.
-     ** `None`
+     ** `None`  \
      * 브라우저가 사이트 간 요청, 같은 사이트 요청 모두 쿠키를 보내는 것을 의미합니다. 이 값을 설정할 때, SameSite=None; Secure와 같이 Secure 속성도 설정되어야 합니다. 만약 Secure가 없는 경우 다음과 같은 오류를 기록합니다.
      * ```
      * Cookie "myCookie" rejected because it has the "SameSite=None" attribute but is missing the "secure" attribute.
@@ -151,11 +151,11 @@ export default class Cookie {
     /**
      * 사이트 간 요청과 함께 쿠키가 전송될지를 제어하여 사이트 간 요청 위조 공격({@link https://developer.mozilla.org/ko/docs/Glossary/CSRF CSRF})에 대한 일부 보호를 제공합니다.
      *
-     ** `Strict`
+     ** `Strict`  \
      * 브라우저가 동일한 사이트 요청에만 쿠키를 전송한다는 것을 의미합니다. 즉, 쿠키를 설정한 동일한 사이트에서 발생하는 요청에만 쿠키를 전송합니다. 만약 다른 도메인 또는 같은 도메인의 스키마에서 발생하는 요청이라면 `SameSite=Strict` 속성이 있는 쿠키는 전송되지 않습니다.
-     ** `Lax`
+     ** `Lax`  \
      * 이미지 또는 프레임을 불러오는 요청과 같은 사이트 간 요청은 쿠키가 전송되지 않는 것을 의미합니다. 하지만 사용자가 링크를 따라갈 때처럼 외부 사이트에서 원래 사이트로 이동할 때는 쿠키를 전송합니다. 이것은 `SameSite` 속성이 명시되지 않았으면 기본 값으로 동작합니다.
-     ** `None`
+     ** `None`  \
      * 브라우저가 사이트 간 요청, 같은 사이트 요청 모두 쿠키를 보내는 것을 의미합니다. 이 값을 설정할 때, SameSite=None; Secure와 같이 Secure 속성도 설정되어야 합니다. 만약 Secure가 없는 경우 다음과 같은 오류를 기록합니다.
      * ```
      * Cookie "myCookie" rejected because it has the "SameSite=None" attribute but is missing the "secure" attribute.
