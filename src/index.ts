@@ -1,3 +1,3 @@
-import Cookie from "./cookie";
+import Cookie from "./cookie.js";
 
 export { Cookie as SCookie };
