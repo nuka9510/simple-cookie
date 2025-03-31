@@ -95,7 +95,28 @@ export default class Cookie {
   #secure: boolean = false;
 
   /**
-   * `Cookie`에 저장할 `cookie-name`, `cookie-value`
+   * `Cookie`에 저장을 위한 객체
+   * 
+   * ```
+   * <script type="importmap">
+   *   {
+   *     "imports": {
+   *       "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.js",
+   *       "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/index.js"
+   *     }
+   *   }
+   * </script>
+   * <script type="module">
+   *   import { JUtil } from "@nuka9510/js-util";
+   *   import { SCookie } from "@nuka9510/simple-cookie";
+   * 
+   *   const cookie = new SCookie('key', 'value');
+   * 
+   *   cookie.setExpires(JUtil.addDate(new Date(), { day: 7 }));
+   * 
+   *   SCookie.setCookie(cookie);
+   * </script>
+   * ```
    */
   constructor(
     /** `cookie-name` */ name: string,
