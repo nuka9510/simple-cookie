@@ -1,5 +1,4 @@
-/// <reference path="../@types/index.d.ts" />
-import { dateInterval } from "util";
+import { dateInterval } from "../@types/util";
 
 export default class Util {
   /**

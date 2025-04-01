@@ -1,3 +1,1 @@
-declare module 'cookie' {
-  type sameSite = 'Strict' | 'Lax' | 'None';
-}
+export type sameSite = 'Strict' | 'Lax' | 'None';

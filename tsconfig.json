@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "typeRoots": ["@types"],
     "checkJs": true,
     "strictNullChecks": false,
     "noPropertyAccessFromIndexSignature": true,

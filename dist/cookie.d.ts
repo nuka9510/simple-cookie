@@ -1,5 +1,4 @@
-/// <reference path="../@types/index.d.ts" />
-import { sameSite } from "cookie";
+import { sameSite } from "../@types/cookie";
 /**
  * `WebBrowser`에서 `Cookie`를 다루기 위한 객체
  */
