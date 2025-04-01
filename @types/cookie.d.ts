@@ -1,6 +1,3 @@
-export = cookie;
-export as namespace cookie;
-
-declare namespace cookie {
+declare module 'cookie' {
   type sameSite = 'Strict' | 'Lax' | 'None';
 }

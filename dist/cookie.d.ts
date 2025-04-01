@@ -1,4 +1,5 @@
-import { sameSite } from "../@types/cookie.js";
+/// <reference path="../@types/index.d.ts" />
+import { sameSite } from "cookie";
 /**
  * `WebBrowser`에서 `Cookie`를 다루기 위한 객체
  */

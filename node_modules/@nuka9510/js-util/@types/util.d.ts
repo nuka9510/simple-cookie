@@ -1,7 +1,4 @@
-export = util;
-export as namespace util;
-
-declare namespace util {
+declare module "util" {
   interface dateInterval {
     year?: number;
     month?: number;

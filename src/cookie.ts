@@ -1,4 +1,5 @@
-import { sameSite } from "../@types/cookie.js";
+/// <reference path="../@types/index.d.ts" />
+import { sameSite } from "cookie";
 import { JUtil } from "@nuka9510/js-util";
 
 /**

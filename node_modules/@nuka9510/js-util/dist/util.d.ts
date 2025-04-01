@@ -1,4 +1,5 @@
-import { dateInterval } from "../@types/util.js";
+/// <reference path="../@types/index.d.ts" />
+import { dateInterval } from "util";
 export default class Util {
     /**
      * 값이 비어있는지 확인한다.
