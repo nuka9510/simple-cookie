@@ -38,24 +38,38 @@
 npm i @nuka9510/simple-cookie
 ```
 ## Usage
-### npm
+### js (> 1.1.0)
+#### cdn
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/index.min.js"> </script>
+```
+or
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/index.min.js"> </script>
+```
+or
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/index.min.js"> </script>
+```
+### module
+#### npm
 ```
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/js-util": "<path>/node_modules/@nuka9510/js-util/dist/index.js",
-      "@nuka9510/simple-cookie": "<path>/node_modules/@nuka9510/simple-cookie/dist/index.js"
+      "@nuka9510/js-util": "<path>/node_modules/@nuka9510/js-util/dist/index.mjs",
+      "@nuka9510/simple-cookie": "<path>/node_modules/@nuka9510/simple-cookie/dist/index.mjs"
     }
   }
 </script>
 ```
-### cdn
+#### cdn
 ```
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.js",
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/index.js"
+      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.mjs",
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/index.mjs"
     }
   }
 </script>
@@ -65,8 +79,8 @@ or
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/index.js",
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/index.js"
+      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/index.mjs",
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/index.mjs"
     }
   }
 </script>
@@ -76,8 +90,8 @@ or
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/index.js",
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/index.js"
+      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/index.mjs",
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/index.mjs"
     }
   }
 </script>
@@ -86,11 +100,11 @@ or
 ```
 example
 ├── js
-│  └── index.js
+│  └── index.mjs
 └── view
    └── index.html
 ```
-* example/js/index.js
+* example/js/index.mjs
 ```
 import { JUtil } from "@nuka9510/js-util";
 import { SCookie } from "@nuka9510/simple-cookie";
@@ -168,11 +182,11 @@ new Index();
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.js",
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/index.js"
+      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.mjs",
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/index.mjs"
     }
   }
 </script>
-<script type="module" src="../js/index.js"></script>
+<script type="module" src="../js/index.mjs"></script>
 </html>
 ```
