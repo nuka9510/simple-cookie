@@ -32,68 +32,52 @@
 
 [top-language]: https://img.shields.io/github/languages/top/nuka9510/simple-cookie
 
-# simple-cookie
-## Installation
+## Usage
+### js (> 1.1.2)
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/index.min.js"> </script>
+  OR
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/index.min.js"> </script>
+  OR
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/index.min.js"> </script>
+```
+```
+<script type="text/javascript">
+  const cookie = new simpleCookie.Cookie("key", "value");
+
+  simpleCookie.Cookie.setCookie(cookie);
+</script>
+```
+### mjs
 ```
 npm i @nuka9510/simple-cookie
 ```
-## Usage
-### js (> 1.1.0)
-#### cdn
-```
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/index.min.js"> </script>
-```
-or
-```
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/index.min.js"> </script>
-```
-or
-```
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/index.min.js"> </script>
-```
-### module
-#### npm
 ```
 <script type="importmap">
   {
     "imports": {
       "@nuka9510/js-util": "<path>/node_modules/@nuka9510/js-util/dist/index.mjs",
       "@nuka9510/simple-cookie": "<path>/node_modules/@nuka9510/simple-cookie/dist/index.mjs"
-    }
-  }
-</script>
-```
-#### cdn
-```
-<script type="importmap">
-  {
-    "imports": {
+        OR
       "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.mjs",
       "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/index.mjs"
-    }
-  }
-</script>
-```
-or
-```
-<script type="importmap">
-  {
-    "imports": {
+        OR
       "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/index.mjs",
       "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/index.mjs"
-    }
-  }
-</script>
-```
-or
-```
-<script type="importmap">
-  {
-    "imports": {
+        OR
       "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/index.mjs",
       "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/index.mjs"
     }
   }
+</script>
+```
+```
+<script type="text/javascript">
+  import { SCookie } from "@nuka9510/simple-cookie";
+
+  const cookie = new SCookie("key", "value");
+
+  SCookie.setCookie(cookie);
 </script>
 ```
 ### example
