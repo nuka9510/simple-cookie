@@ -345,6 +345,7 @@ class Cookie {
         const expires = cookie.expires.split('=')[1]?.replace(';', ''), maxAge = cookie.maxAge.split('=')[1]?.replace(';', '');
         cookie.setMaxAge(0);
         Cookie.setCookie(cookie);
+        cookie.setMaxAge(undefined);
         if (!_nuka9510_js_util__WEBPACK_IMPORTED_MODULE_0__.JUtil.empty(expires)) {
             cookie.setExpires(new Date(expires));
         }

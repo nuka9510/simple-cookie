@@ -385,6 +385,8 @@ export default class Cookie {
 
     Cookie.setCookie(cookie);
 
+    cookie.setMaxAge(undefined);
+
     if (!JUtil.empty(expires)) { cookie.setExpires(new Date(expires)); }
     if (!JUtil.empty(maxAge)) { cookie.setMaxAge(parseInt(maxAge)); }
   }

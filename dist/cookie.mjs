@@ -332,6 +332,7 @@ export default class Cookie {
         const expires = cookie.expires.split('=')[1]?.replace(';', ''), maxAge = cookie.maxAge.split('=')[1]?.replace(';', '');
         cookie.setMaxAge(0);
         Cookie.setCookie(cookie);
+        cookie.setMaxAge(undefined);
         if (!JUtil.empty(expires)) {
             cookie.setExpires(new Date(expires));
         }
