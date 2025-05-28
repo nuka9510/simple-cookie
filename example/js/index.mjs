@@ -38,9 +38,10 @@ class Index {
     const name = document.querySelector('[data-name="name"]');
 
     if (!JUtil.empty(name.value)) {
-      const result = document.querySelector('[data-name="result"]');
+      const cookie = new SCookie(name.value),
+      result = document.querySelector('[data-name="result"]');
 
-      SCookie.popCookie(name.value);
+      SCookie.popCookie(cookie);
 
       result.innerHTML = document.cookie;
     } else { alert(`'name'을 입력 해주세요.`); }
