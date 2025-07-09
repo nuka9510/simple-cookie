@@ -30,7 +30,7 @@ export default class Cookie {
      */
     constructor(
     /** `cookie-name` */ name: string, 
-    /** `cookie-value` #default `''` */ value?: string);
+    /** `cookie-value` */ value: string);
     /** cookie-name */
     get name(): string;
     /** cookie-value */
@@ -202,14 +202,18 @@ export default class Cookie {
      * `cookie` 값 반환
      *
      * ```
-     * const cookie = new Cookie('name', 'value');
+     * const cookie1 = new Cookie('name1', 'value1');
+     * const cookie1 = new Cookie('name2', 'value2');
      *
-     * Cookie.setCookie(cookie);
+     * Cookie.setCookie(cookie1);
+     * Cookie.setCookie(cookie2);
      *
-     * console.log(Cookie.getCookie('name'));
+     * console.log(Cookie.getCookie('name1'));
+     * console.log(Cookie.getCookie('name2'));
+     * console.log(Cookie.getCookie(['name1', 'name2']));
      * ```
      */
-    static getCookie(name: string): string | null;
+    static getCookie(name: string | string[]): Cookie | Cookie[] | null;
     /**
      * `cookie` 값 설정
      *

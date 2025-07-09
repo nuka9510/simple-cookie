@@ -38,7 +38,7 @@ class Index {
     const name = document.querySelector('[data-name="name"]');
 
     if (!JUtil.empty(name.value)) {
-      const cookie = new SCookie(name.value),
+      const cookie = SCookie.getCookie(name.value),
       result = document.querySelector('[data-name="result"]');
 
       SCookie.popCookie(cookie);

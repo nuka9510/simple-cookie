@@ -5,11 +5,7 @@ import { JUtil } from "@nuka9510/js-util";
 export default class Cookie {
     /** cookie-name */
     #name;
-    /**
-     * cookie-value
-     *
-     * #default `''`
-     */
+    /** cookie-value */
     #value;
     /**
      * 쿠키를 보낼 호스트를 정의합니다
@@ -82,6 +78,13 @@ export default class Cookie {
      * #default `false`
      */
     #secure = false;
+    /** code-value encode/decode 용 정규식 객체 */
+    static #regex = {
+        /** code-value encode 용 정규식 객체 */
+        encode: new RegExp(encodeURIComponent(' '), 'g'),
+        /** code-value decode 용 정규식 객체 */
+        decode: new RegExp('\\+', 'g')
+    };
     /**
      * `Cookie`에 저장을 위한 객체
      *
@@ -108,17 +111,23 @@ export default class Cookie {
      */
     constructor(
     /** `cookie-name` */ name, 
-    /** `cookie-value` #default `''` */ value = '') {
+    /** `cookie-value` */ value) {
+        if (typeof name != "string" ||
+            typeof value != "string") {
+            throw new TypeError(`'name' 또는 'value'가 'string'이 아닙니다.`);
+        }
         if (JUtil.empty(name)) {
             throw new Error(`'name'이 비어있습니다.`);
         }
         this.#name = name;
-        this.#value = value;
+        this.#value = Cookie.#encode(value);
     }
     /** cookie-name */
     get name() { return this.#name; }
     /** cookie-value */
-    get value() { return this.#value; }
+    get value() { return Cookie.#decode(this.#value); }
+    /** cookie */
+    get #cookie() { return `${this.#name}=${this.#value};`; }
     /**
      * 쿠키를 보낼 호스트를 정의합니다
      *
@@ -281,30 +290,40 @@ export default class Cookie {
      */
     secure) { this.#secure = secure; }
     /** `Set-Cookie`헤더 문자열을 반환한다. */
-    toString() {
-        const regex = new RegExp(encodeURIComponent(' '), 'g'), value = encodeURIComponent(this.value).replace(regex, '+');
-        return `${this.name}=${value}; ${this.domain} ${this.expires} ${this.httpOnly} ${this.maxAge} ${this.partition}${this.path}${this.sameSite}${this.secure}`.replace(/(;) {2,}([^ ])/, '$1 $2');
-    }
+    toString() { return `${this.#cookie} ${this.domain} ${this.expires} ${this.httpOnly} ${this.maxAge} ${this.partition} ${this.path} ${this.sameSite} ${this.secure}`.trim(); }
     /**
      * `cookie` 값 반환
      *
      * ```
-     * const cookie = new Cookie('name', 'value');
+     * const cookie1 = new Cookie('name1', 'value1');
+     * const cookie1 = new Cookie('name2', 'value2');
      *
-     * Cookie.setCookie(cookie);
+     * Cookie.setCookie(cookie1);
+     * Cookie.setCookie(cookie2);
      *
-     * console.log(Cookie.getCookie('name'));
+     * console.log(Cookie.getCookie('name1'));
+     * console.log(Cookie.getCookie('name2'));
+     * console.log(Cookie.getCookie(['name1', 'name2']));
      * ```
      */
     static getCookie(name) {
-        const regex = new RegExp('\\+', 'g'), cookie = document.cookie
+        let cookie = document.cookie
             .split('; ')
-            .find((...arg) => arg[0].startsWith(name));
-        if (!JUtil.empty(cookie)) {
-            return decodeURIComponent(cookie.split('=')[1].replace(regex, encodeURIComponent(' ')));
+            .values()
+            .map((...arg) => arg[0].split('='));
+        if (Array.isArray(name)) {
+            return cookie.filter((...arg) => name.includes(arg[0][0]))
+                .map((...arg) => new Cookie(arg[0][0], Cookie.#decode(arg[0][1])))
+                .toArray();
         }
         else {
-            return null;
+            cookie = cookie.find((...arg) => arg[0][0] == name);
+            if (!JUtil.empty(cookie)) {
+                return new Cookie(cookie[0], Cookie.#decode(cookie[1]));
+            }
+            else {
+                return null;
+            }
         }
     }
     /**
@@ -329,15 +348,14 @@ export default class Cookie {
      * ```
      */
     static popCookie(cookie) {
-        const expires = cookie.expires.split('=')[1]?.replace(';', ''), maxAge = cookie.maxAge.split('=')[1]?.replace(';', '');
+        const expires = cookie.#expires, maxAge = cookie.#maxAge;
         cookie.setMaxAge(0);
         Cookie.setCookie(cookie);
-        cookie.setMaxAge(undefined);
-        if (!JUtil.empty(expires)) {
-            cookie.setExpires(new Date(expires));
-        }
-        if (!JUtil.empty(maxAge)) {
-            cookie.setMaxAge(parseInt(maxAge));
-        }
+        cookie.setExpires(expires);
+        cookie.setMaxAge(maxAge);
     }
+    /** cookie-value encode 값 반환 */
+    static #encode(value) { return encodeURIComponent(value).replace(Cookie.#regex.encode, '+'); }
+    /** cookie-value decode 값 반환 */
+    static #decode(value) { return decodeURIComponent(value.replace(Cookie.#regex.decode, encodeURIComponent(' '))); }
 }
