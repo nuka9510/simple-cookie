@@ -6,11 +6,13 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/esm/index.min.mjs"
+      "import": "./dist/esm/index.min.mjs",
+      "require": "./dist/cjs/index.min.cjs"
     },
     "./js-util": {
       "types": "./dist/js-util.d.ts",
-      "import": "./dist/esm/js-util.min.mjs"
+      "import": "./dist/esm/js-util.min.mjs",
+      "require": "./dist/cjs/js-util.min.cjs"
     }
   },
   "files": [
@@ -32,7 +34,9 @@
     "front-end",
     "cookie",
     "module",
+    "CommonJS",
     "ES Module",
+    "cjs",
     "esm"
   ],
   "author": "nuka9510",

@@ -16,6 +16,15 @@ module.exports = [
     devtool: 'source-map',
     entry: './dist/index.js',
     output: {
+      filename: 'index.cjs',
+      path: path.resolve(__dirname, 'dist/cjs'),
+      library: { type: 'commonjs2' }
+    }
+  }, {
+    mode: 'development',
+    devtool: 'source-map',
+    entry: './dist/index.js',
+    output: {
       filename: 'index.js',
       path: path.resolve(__dirname, 'dist/js'),
       library: {
@@ -34,6 +43,15 @@ module.exports = [
     },
     experiments: { outputModule: true }
   }, {
+    mode: 'development',
+    devtool: 'source-map',
+    entry: './dist/js-util.js',
+    output: {
+      filename: 'js-util.cjs',
+      path: path.resolve(__dirname, 'dist/cjs'),
+      library: { type: 'commonjs2' }
+    }
+  }, {
     mode: 'production',
     entry: './dist/index.js',
     output: {
@@ -42,6 +60,14 @@ module.exports = [
       library: { type: 'module' }
     },
     experiments: { outputModule: true }
+  }, {
+    mode: 'production',
+    entry: './dist/index.js',
+    output: {
+      filename: 'index.min.cjs',
+      path: path.resolve(__dirname, 'dist/cjs'),
+      library: { type: 'commonjs2' }
+    }
   }, {
     mode: 'production',
     entry: './dist/index.js',
@@ -62,5 +88,13 @@ module.exports = [
       library: { type: 'module' }
     },
     experiments: { outputModule: true }
+  }, {
+    mode: 'production',
+    entry: './dist/js-util.js',
+    output: {
+      filename: 'js-util.min.cjs',
+      path: path.resolve(__dirname, 'dist/cjs'),
+      library: { type: 'commonjs2' }
+    }
   }
 ];
