@@ -50,7 +50,7 @@ npm i @nuka9510/simple-cookie
   {
     "imports": {
       "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/index.mjs",
-      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/esm/js-util.mjs"
+      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/js-util.mjs"
     }
   }
 </script>
@@ -60,7 +60,7 @@ npm i @nuka9510/simple-cookie
   {
     "imports": {
       "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/esm/index.mjs",
-      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/esm/js-util.mjs"
+      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/esm/js-util.mjs"
     }
   }
 </script>
@@ -70,7 +70,7 @@ npm i @nuka9510/simple-cookie
   {
     "imports": {
       "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/esm/index.mjs",
-      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/esm/js-util.mjs",
+      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/esm/js-util.mjs",
     }
   }
 </script>
