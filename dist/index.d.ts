@@ -1,3 +1,2 @@
-import Cookie from "./cookie.mjs";
-import { JUtil } from "@nuka9510/js-util";
-export { Cookie, JUtil };
+import Cookie from "./cookie.js";
+export { Cookie };

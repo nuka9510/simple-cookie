@@ -1,4 +1,4 @@
-import { JUtil } from "@nuka9510/js-util";
+import { Util } from "@nuka9510/js-util";
 /**
  * `WebBrowser`에서 `Cookie`를 다루기 위한 객체
  */
@@ -116,7 +116,7 @@ export default class Cookie {
             typeof value != "string") {
             throw new TypeError(`'name' 또는 'value'가 'string'이 아닙니다.`);
         }
-        if (JUtil.empty(name)) {
+        if (Util.empty(name)) {
             throw new Error(`'name'이 비어있습니다.`);
         }
         this.#name = name;
@@ -141,7 +141,7 @@ export default class Cookie {
      *
      * `Domain=domain;`
      */
-    get domain() { return JUtil.empty(this.#domain) ? '' : `Domain=${this.#domain};`; }
+    get domain() { return Util.empty(this.#domain) ? '' : `Domain=${this.#domain};`; }
     /**
      * HTTP 날짜 타임스탬프로 쿠키의 최대 생명주기를 나타냅니다.
      *
@@ -151,7 +151,7 @@ export default class Cookie {
      *
      * `Expires=expires;`
      */
-    get expires() { return JUtil.empty(this.#expires) ? '' : `Expires=${this.#expires.toUTCString()};`; }
+    get expires() { return Util.empty(this.#expires) ? '' : `Expires=${this.#expires.toUTCString()};`; }
     /**
      * JavaScript가 `Document.cookie` 속성 등을 통해 쿠키에 접근하는 것을 금지합니다. `HttpOnly`로 만들어진 쿠키는 `XMLHttpRequest.send()` 또는 `fetch()`등을 호출할 때 여전히 JavaScript 시작 요청과 함께 전송합니다. 이것은 사이트 간 스크립팅({@link https://developer.mozilla.org/ko/docs/Glossary/Cross-site_scripting XSS})에 대한 공격을 완화합니다.
      *
@@ -163,7 +163,7 @@ export default class Cookie {
      *
      * `Max-Age=maxAge;`
      */
-    get maxAge() { return JUtil.isNumber(this.#maxAge, true) ? `Max-Age=${this.#maxAge};` : ''; }
+    get maxAge() { return Util.isNumber(this.#maxAge, true) ? `Max-Age=${this.#maxAge};` : ''; }
     /**
      * 쿠키는 분할 저장소를 사용하여 저장해야 함을 나타냅니다. 더 많은 내용은 {@link https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/Privacy_sandbox/Partitioned_cookies Cookies Having Independent Partitioned State (CHIPS)}를 참고하세요.
      *
@@ -178,7 +178,7 @@ export default class Cookie {
      *
      * `Path=path;`
      */
-    get path() { return JUtil.empty(this.#path) ? '' : `Path=${this.#path};`; }
+    get path() { return Util.empty(this.#path) ? '' : `Path=${this.#path};`; }
     /**
      * 사이트 간 요청과 함께 쿠키가 전송될지를 제어하여 사이트 간 요청 위조 공격({@link https://developer.mozilla.org/ko/docs/Glossary/CSRF CSRF})에 대한 일부 보호를 제공합니다.
      *
@@ -197,7 +197,7 @@ export default class Cookie {
      *
      * `SameSite=sameSite;`
      */
-    get sameSite() { return JUtil.empty(this.#sameSite) ? '' : `SameSite=${this.#sameSite};`; }
+    get sameSite() { return Util.empty(this.#sameSite) ? '' : `SameSite=${this.#sameSite};`; }
     /**
      * 쿠키가 localhost를 제외한 `https:` 스키마에서 요청할 때만 쿠키가 전송되는걸 나타냅니다. 따라서 {@link https://developer.mozilla.org/ko/docs/Glossary/MitM 중간자} 공격에 더 강합니다.
      *
@@ -318,7 +318,7 @@ export default class Cookie {
         }
         else {
             cookie = cookie.find((...arg) => arg[0][0] == name);
-            if (!JUtil.empty(cookie)) {
+            if (!Util.empty(cookie)) {
                 return new Cookie(cookie[0], Cookie.#decode(cookie[1]));
             }
             else {

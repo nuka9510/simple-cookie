@@ -32,53 +32,63 @@
 
 [top-language]: https://img.shields.io/github/languages/top/nuka9510/simple-cookie
 
-## Usage
-### js (> 1.1.2)
-```
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/index.min.js"> </script>
-  OR
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/index.min.js"> </script>
-  OR
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/index.min.js"> </script>
-```
-```
-<script type="text/javascript">
-  const cookie = new simpleCookie.Cookie("key", "value");
-
-  simpleCookie.Cookie.setCookie(cookie);
-</script>
-```
-### mjs
+## Install
 ```
 npm i @nuka9510/simple-cookie
+```
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/js/index.min.js"> </script>
+```
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/js/index.min.js"> </script>
+```
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/js/index.min.js"> </script>
 ```
 ```
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/js-util": "<path>/node_modules/@nuka9510/js-util/dist/index.mjs",
-      "@nuka9510/simple-cookie": "<path>/node_modules/@nuka9510/simple-cookie/dist/index.mjs"
-        OR
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.mjs",
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/index.mjs"
-        OR
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/index.mjs",
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/index.mjs"
-        OR
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/index.mjs",
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/index.mjs"
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/index.mjs",
+      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/esm/js-util.mjs"
     }
   }
 </script>
 ```
 ```
-<script type="text/javascript">
-  import { SCookie } from "@nuka9510/simple-cookie";
-
-  const cookie = new SCookie("key", "value");
-
-  SCookie.setCookie(cookie);
+<script type="importmap">
+  {
+    "imports": {
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/esm/index.mjs",
+      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/esm/js-util.mjs"
+    }
+  }
 </script>
+```
+```
+<script type="importmap">
+  {
+    "imports": {
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/esm/index.mjs",
+      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/esm/js-util.mjs",
+    }
+  }
+</script>
+```
+## Usage
+### js (> 1.1.2)
+```
+const cookie = new simpleCookie.Cookie("key", "value");
+
+simpleCookie.Cookie.setCookie(cookie);
+```
+### mjs
+```
+import { Cookie } from "@nuka9510/simple-cookie";
+
+const cookie = new Cookie("key", "value");
+
+Cookie.setCookie(cookie);
 ```
 ### example
 ```
@@ -90,8 +100,8 @@ example
 ```
 * example/js/index.mjs
 ```
-import { JUtil } from "@nuka9510/js-util";
-import { SCookie } from "@nuka9510/simple-cookie";
+import { Cookie } from "@nuka9510/simple-cookie";
+import { Util } from "@nuka9510/simple-cookie/js-util";
 
 class Index {
   constructor() {
@@ -112,15 +122,15 @@ class Index {
     expires = document.querySelector('[data-name="expires"]');
 
     if (
-      !JUtil.empty(name.value) &&
-      !JUtil.empty(value.value)
+      !Util.empty(name.value) &&
+      !Util.empty(value.value)
     ) {
-      const cookie = new SCookie(name.value, value.value),
+      const cookie = new Cookie(name.value, value.value),
       result = document.querySelector('[data-name="result"]');
 
-      if (!JUtil.empty(expires.value)) { cookie.setExpires(new Date(expires.value)); }
+      if (!Util.empty(expires.value)) { cookie.setExpires(new Date(expires.value)); }
 
-      SCookie.setCookie(cookie);
+      Cookie.setCookie(cookie);
 
       result.innerHTML = document.cookie;
     } else { alert(`'name' 또는 'value'를 입력 해주세요.`); }
@@ -129,10 +139,11 @@ class Index {
   onPopCookieClick(ev) {
     const name = document.querySelector('[data-name="name"]');
 
-    if (!JUtil.empty(name.value)) {
-      const result = document.querySelector('[data-name="result"]');
+    if (!Util.empty(name.value)) {
+      const cookie = Cookie.getCookie(name.value),
+      result = document.querySelector('[data-name="result"]');
 
-      SCookie.popCookie(name.value);
+      Cookie.popCookie(cookie);
 
       result.innerHTML = document.cookie;
     } else { alert(`'name'을 입력 해주세요.`); }
@@ -166,8 +177,8 @@ new Index();
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.mjs",
-      "@nuka9510/simple-cookie": "../../dist/index.mjs"
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/index.min.mjs",
+      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/js-util.min.mjs"
     }
   }
 </script>

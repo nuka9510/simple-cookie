@@ -1,5 +1,5 @@
-import { JUtil } from "@nuka9510/js-util";
-import { SCookie } from "@nuka9510/simple-cookie";
+import { Cookie } from "@nuka9510/simple-cookie";
+import { Util } from "@nuka9510/simple-cookie/js-util";
 
 class Index {
   constructor() {
@@ -20,15 +20,15 @@ class Index {
     expires = document.querySelector('[data-name="expires"]');
 
     if (
-      !JUtil.empty(name.value) &&
-      !JUtil.empty(value.value)
+      !Util.empty(name.value) &&
+      !Util.empty(value.value)
     ) {
-      const cookie = new SCookie(name.value, value.value),
+      const cookie = new Cookie(name.value, value.value),
       result = document.querySelector('[data-name="result"]');
 
-      if (!JUtil.empty(expires.value)) { cookie.setExpires(new Date(expires.value)); }
+      if (!Util.empty(expires.value)) { cookie.setExpires(new Date(expires.value)); }
 
-      SCookie.setCookie(cookie);
+      Cookie.setCookie(cookie);
 
       result.innerHTML = document.cookie;
     } else { alert(`'name' 또는 'value'를 입력 해주세요.`); }
@@ -37,11 +37,11 @@ class Index {
   onPopCookieClick(ev) {
     const name = document.querySelector('[data-name="name"]');
 
-    if (!JUtil.empty(name.value)) {
-      const cookie = SCookie.getCookie(name.value),
+    if (!Util.empty(name.value)) {
+      const cookie = Cookie.getCookie(name.value),
       result = document.querySelector('[data-name="result"]');
 
-      SCookie.popCookie(cookie);
+      Cookie.popCookie(cookie);
 
       result.innerHTML = document.cookie;
     } else { alert(`'name'을 입력 해주세요.`); }
