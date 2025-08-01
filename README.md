@@ -49,8 +49,7 @@ npm i @nuka9510/simple-cookie
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/index.mjs",
-      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/js-util.mjs"
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/index.mjs"
     }
   }
 </script>
@@ -59,8 +58,7 @@ npm i @nuka9510/simple-cookie
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/esm/index.mjs",
-      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/esm/js-util.mjs"
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/esm/index.mjs"
     }
   }
 </script>
@@ -69,8 +67,7 @@ npm i @nuka9510/simple-cookie
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/esm/index.mjs",
-      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/esm/js-util.mjs",
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/esm/index.mjs"
     }
   }
 </script>
@@ -107,8 +104,8 @@ example
 ```
 * example/js/index.mjs
 ```
+import { Util } from "@nuka9510/js-util";
 import { Cookie } from "@nuka9510/simple-cookie";
-import { Util } from "@nuka9510/simple-cookie/js-util";
 
 class Index {
   constructor() {
@@ -184,8 +181,8 @@ new Index();
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/index.min.mjs",
-      "@nuka9510/simple-cookie/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/js-util.min.mjs"
+      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/esm/index.min.mjs",
+      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/index.min.mjs"
     }
   }
 </script>

@@ -33,25 +33,6 @@ module.exports = [
       }
     }
   }, {
-    mode: 'development',
-    devtool: 'source-map',
-    entry: './dist/js-util.js',
-    output: {
-      filename: 'js-util.mjs',
-      path: path.resolve(__dirname, 'dist/esm'),
-      library: { type: 'module' }
-    },
-    experiments: { outputModule: true }
-  }, {
-    mode: 'development',
-    devtool: 'source-map',
-    entry: './dist/js-util.js',
-    output: {
-      filename: 'js-util.cjs',
-      path: path.resolve(__dirname, 'dist/cjs'),
-      library: { type: 'commonjs2' }
-    }
-  }, {
     mode: 'production',
     entry: './dist/index.js',
     output: {
@@ -78,23 +59,6 @@ module.exports = [
         name: 'simpleCookie',
         type: 'var'
       }
-    }
-  }, {
-    mode: 'production',
-    entry: './dist/js-util.js',
-    output: {
-      filename: 'js-util.min.mjs',
-      path: path.resolve(__dirname, 'dist/esm'),
-      library: { type: 'module' }
-    },
-    experiments: { outputModule: true }
-  }, {
-    mode: 'production',
-    entry: './dist/js-util.js',
-    output: {
-      filename: 'js-util.min.cjs',
-      path: path.resolve(__dirname, 'dist/cjs'),
-      library: { type: 'commonjs2' }
     }
   }
 ];

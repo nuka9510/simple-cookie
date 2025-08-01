@@ -9,16 +9,8 @@
       "import": "./dist/esm/index.min.mjs",
       "require": "./dist/cjs/index.min.cjs"
     },
-    "./js-util": {
-      "types": "./dist/js-util.d.ts",
-      "import": "./dist/esm/js-util.min.mjs",
-      "require": "./dist/cjs/js-util.min.cjs"
-    },
     "./@types/cookie": {
       "types": "./@types/cookie.d.ts"
-    },
-    "./@types/js-util/util": {
-      "types": "./@types/js-util/util.d.ts"
     }
   },
   "files": [

@@ -1,5 +1,5 @@
+import { Util } from "@nuka9510/js-util";
 import { Cookie } from "@nuka9510/simple-cookie";
-import { Util } from "@nuka9510/simple-cookie/js-util";
 
 class Index {
   constructor() {
