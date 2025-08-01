@@ -48,27 +48,21 @@ npm i @nuka9510/simple-cookie
 ```
 <script type="importmap">
   {
-    "imports": {
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/index.mjs"
-    }
+    "imports": { "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie/dist/esm/index.mjs" }
   }
 </script>
 ```
 ```
 <script type="importmap">
   {
-    "imports": {
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/esm/index.mjs"
-    }
+    "imports": { "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@latest/dist/esm/index.mjs" }
   }
 </script>
 ```
 ```
 <script type="importmap">
   {
-    "imports": {
-      "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/esm/index.mjs"
-    }
+    "imports": { "@nuka9510/simple-cookie": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-cookie@<specific-version>/dist/esm/index.mjs" }
   }
 </script>
 ```
