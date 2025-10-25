@@ -67,7 +67,7 @@ npm i @nuka9510/simple-cookie
 </script>
 ```
 ## Usage
-### js (> 1.1.2)
+### js
 ```
 const cookie = new simpleCookie.Cookie("key", "value");
 
@@ -81,7 +81,7 @@ const cookie = new Cookie("key", "value");
 
 Cookie.setCookie(cookie);
 ```
-### cjs (> 1.3.2)
+### cjs
 ```
 const simpleCookie = require('@nuka9510/simple-cookie'),
 cookie = new simpleCookie.Cookie("key", "value");
