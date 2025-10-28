@@ -1,4 +1,4 @@
-import { sameSite } from "../@types/cookie";
+import { sameSite } from "@nuka9510/simple-cookie/@types/cookie";
 import { Util } from "@nuka9510/js-util";
 
 /**

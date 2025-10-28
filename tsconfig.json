@@ -10,7 +10,12 @@
     "target": "ESNext",
     "declaration": true,
     "declarationDir": "dist",
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@nuka9510/simple-cookie": ["src/index.ts"],
+      "@nuka9510/simple-cookie/@types/cookie": ["@types/cookie.d.ts"]
+    }
   },
   "include": [
     "src/index.ts"

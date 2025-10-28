@@ -10,6 +10,7 @@
     "target": "ESNext",
     "paths": {
       "@nuka9510/simple-cookie": [ "../../dist/index.d.ts" ],
+      "@nuka9510/simple-cookie/@types/cookie": [ "../../@types/cookie.d.ts" ],
       "@nuka9510/js-util": [ "../../node_modules/@nuka9510/js-util/dist/index.d.ts" ]
     }
   }

@@ -1,4 +1,4 @@
-import { sameSite } from "../@types/cookie";
+import { sameSite } from "@nuka9510/simple-cookie/@types/cookie";
 /**
  * `WebBrowser`에서 `Cookie`를 다루기 위한 객체
  */
