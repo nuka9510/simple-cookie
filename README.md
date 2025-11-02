@@ -79,26 +79,19 @@ npm i @nuka9510/simple-cookie
 - js
 
 ```js
-const cookie = new simpleCookie.Cookie("key", "value");
-
-simpleCookie.Cookie.setCookie(cookie);
+simpleCookie.Cookie;
 ```
 
 - mjs
 
 ```js
 import { Cookie } from "@nuka9510/simple-cookie";
-
-const cookie = new Cookie("key", "value");
-
-Cookie.setCookie(cookie);
 ```
 
 - cjs
 
 ```js
 const simpleCookie = require('@nuka9510/simple-cookie'),
-cookie = new simpleCookie.Cookie("key", "value");
 
-simpleCookie.Cookie.setCookie(cookie);
+simpleCookie.Cookie;
 ```
