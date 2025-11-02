@@ -42,7 +42,7 @@
   "bugs": {
     "url": "https://github.com/nuka9510/simple-cookie/issues"
   },
-  "homepage": "https://github.com/nuka9510/simple-cookie",
+  "homepage": "https://github.com/nuka9510/simple-cookie/wiki",
   "devDependencies": {
     "@types/node": "^22.14.0",
     "@types/webpack": "^5.28.5",
