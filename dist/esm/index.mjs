@@ -112,13 +112,13 @@ class Cookie {
      * </script>
      * <script type="module">
      *   import { JUtil } from "@nuka9510/js-util";
-     *   import { SCookie } from "@nuka9510/simple-cookie";
+     *   import { Cookie } from "@nuka9510/simple-cookie";
      *
-     *   const cookie = new SCookie('key', 'value');
+     *   const cookie = new Cookie('key', 'value');
      *
      *   cookie.setExpires(JUtil.addDate(new Date(), { day: 7 }));
      *
-     *   SCookie.setCookie(cookie);
+     *   Cookie.setCookie(cookie);
      * </script>
      * ```
      */
